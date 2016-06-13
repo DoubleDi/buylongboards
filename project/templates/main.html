@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Buy longboard</title>
+    {% load staticfiles %}
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "main.css" %}">
+    <link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="{% static "favicon.ico" %}">
+	<link rel="icon" type="image/png" sizes="196x196" href="{% static "favicon-192.png" %}">
+	<link rel="icon" type="image/png" sizes="160x160" href="{% static "favicon-160.png" %}">
+	<link rel="icon" type="image/png" sizes="96x96" href="{% static "favicon-96.png" %}">
+	<link rel="icon" type="image/png" sizes="64x64" href="{% static "favicon-64.png" %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static "favicon-32.png" %}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static "favicon-16.png" %}">
+	<link rel="apple-touch-icon" href="{% static "favicon-57.png" %}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{% static "favicon-114.png" %}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{% static "favicon-72.png" %}">
+	<link rel="apple-touch-icon" sizes="144x144" href="{% static "favicon-144.png" %}">
+	<link rel="apple-touch-icon" sizes="60x60" href="{% static "favicon-60.png" %}">
+	<link rel="apple-touch-icon" sizes="120x120" href="{% static "favicon-120.png" %}">
+	<link rel="apple-touch-icon" sizes="76x76" href="{% static "favicon-76.png" %}">
+	<link rel="apple-touch-icon" sizes="152x152" href="{% static "favicon-152.png" %}">
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static "favicon-180.png" %}">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="{% static "favicon-144.png" %}">
+	<meta name="msapplication-config" content="{% static "browserconfig.xml" %}">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top mynav">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><font color="white"><strong>Buy longboard</strong></font></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-center">
+                    <li class="active"><a href="/"><font color="white"><strong>Каталог</strong></font></a></li>
+                    <li><a href="/order/"><font color="white"><strong>Контакты</strong></font></a></li>
+                </ul>
+            </div>
+        </div>
+      </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+<br>
+<br>
+    <div class="jumbotron jumbo" height=1500px>
+      <div>
+    <font color="white">
+        <center><h1><strong>Buy longboard</strong></h1></center>
+        <p><center><h3>Привет, друг, хочешь купить лонгборд? Ты обратился по адресу.</h3></center></p>
+        <p><center><h3>В нашем магазине Buy longbord ты сможешь найти лонгборды любой формы, любого цвета и размера.</h3></center></p>
+        <p><center><h3>Мы сотрудничаем со всеми известными производителями.</h3></center></p>
+        <p><center><h3>Анализируя весь рынок лонгбордов, мы устанавливаем самые низкие цены.</h3></center></p>
+        <p><center><h3>Неважно, новичок ты или профессионал, у нас ты найдешь все, что тебе нужно.</h3></center></p>
+    </font>
+        <center>
+        <a href="/order/" class="btn btn-lg btn-primary">Заказать прямо сейчас</a>
+        </center>
+      </div>
+    </div>
+      <div class="text-center">
+                  {% if prev %}<a href="{{ prev }}" class="btn btn-lg btn-primary">&laquo;</a>{% endif %}
+                  <span class="dropdown">
+                      <button class="btn btn-lg btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Цена
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="/sortup/">По возрастанию</a></li>
+                          <li><a href="/sortdown/">По убыванию</a></li>
+                        </ul>
+                    </span>
+                  <span class="dropdown">
+                      <button class="btn btn-lg btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Компактность
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="/kompup/">По возрастанию</a></li>
+                          <li><a href="/kompdown/">По убыванию</a></li>
+                        </ul>
+                    </span>
+                  <span class="dropdown">
+                      <button class="btn btn-lg btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Скорость
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="/speedup/">По возрастанию</a></li>
+                          <li><a href="/speeddown/">По убыванию</a></li>
+                        </ul>
+                    </span>
+                  <span class="dropdown">
+                      <button class="btn btn-lg btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Управляемость
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="/uprup/">По возрастанию</a></li>
+                          <li><a href="/uprdown/">По убыванию</a></li>
+                        </ul>
+                    </span>
+                  <span class="dropdown">
+                      <button class="btn btn-lg btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Устойчивость
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="/ustup/">По возрастанию</a></li>
+                          <li><a href="/ustdown/">По убыванию</a></li>
+                        </ul>
+                    </span>
+                  <span class="dropdown">
+                      <button class="btn btn-lg btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Амортизация
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="/amorup/">По возрастанию</a></li>
+                          <li><a href="/amordown/">По убыванию</a></li>
+                        </ul>
+                    </span>
+                  <span class="dropdown">
+                      <button class="btn btn-lg btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Гибкость
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="/gibup/">По возрастанию</a></li>
+                          <li><a href="/gibdown/">По убыванию</a></li>
+                        </ul>
+                    </span>
+                  {% if next %}<a href="{{ next }}" class="btn btn-lg btn-primary">&raquo;</a>{% endif %}
+      </div>
+    <div class="container">
+      <!-- Example row of columns -->
+      <!-- <h3> Hажми на понравившуюся тебе доску... </h3> -->
+      <br>
+        <div class="row">
+        {% for long in long_list %}
+        <div class="col-md-3">
+          <br>
+          <br>
+          <!--add tradepost -->
+          <div class="modal fade bs-modal-lg addtradepost{{ long.id }}">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <a href="/order/" class="pull-right btn btn-success">Заказать</a>
+                  <h3 class="modal-title text-center">{{ long.name }}
+                  <button type="button" class=" pull-left btn btn-default btn_close" data-dismiss="modal">Закрыть</button>&nbsp;
+                  </h3>
+                </div>
+                <div class="modal-body row">
+                 <div class="col-sm-4">
+                        <center><h3>
+                     <strong>
+                         По Buylongboard:
+                     </strong>
+                     </h3></center>
+
+                     <center><h4><div>Компактность: </div></h4></center>
+                     <div class="progress">
+                     {% if long.komp <= 2 %}
+                     <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ long.komp }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.komp }}0%">{{ long.komp }}</div>
+                     {% elif long.komp <= 4 %}
+                     <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ long.komp }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.komp }}0%">{{ long.komp }}</div>
+                     {% elif long.komp <= 7 %}
+                     <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar" aria-valuenow="{{ long.komp }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.komp }}0%">{{ long.komp }}</div>
+                     {% else %}
+                     <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ long.komp }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.komp }}0%">{{ long.komp }}</div>
+                     {% endif %}
+                    </div>
+
+
+                     <center><h4><div>Скорость: </div></h4></center>
+                     <div class="progress">
+                     {% if long.speed <= 2 %}
+                     <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ long.speed }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.speed }}0%">{{ long.speed }}</div>
+                     {% elif long.speed <= 4 %}
+                     <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ long.speed }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.speed }}0%">{{ long.speed }}</div>
+                     {% elif long.speed <= 7 %}
+                     <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar" aria-valuenow="{{ long.speed }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.speed }}0%">{{ long.speed }}</div>
+                     {% else %}
+                     <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ long.speed }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.speed }}0%">{{ long.speed }}</div>
+                     {% endif %}
+                    </div>
+
+
+                     <center><h4><div>Управляемость: </div></h4></center>
+                     <div class="progress">
+                     {% if long.upr <= 2 %}
+                     <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ long.upr }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.upr }}0%">{{ long.upr }}</div>
+                     {% elif long.upr <= 4 %}
+                     <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ long.upr }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.upr }}0%">{{ long.upr }}</div>
+                     {% elif long.upr <= 7 %}
+                     <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar" aria-valuenow="{{ long.upr }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.upr }}0%">{{ long.upr }}</div>
+                     {% else %}
+                     <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ long.upr }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.upr }}0%">{{ long.upr }}</div>
+                     {% endif %}
+                    </div>
+
+
+                     <center><h4><div>Устройчивость: </div></h4></center>
+                     <div class="progress">
+                     {% if long.ust <= 2 %}
+                     <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ long.ust }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.ust }}0%">{{ long.ust }}</div>
+                     {% elif long.ust <= 4 %}
+                     <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ long.ust }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.ust }}0%">{{ long.ust }}</div>
+                     {% elif long.ust <= 7 %}
+                     <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar" aria-valuenow="{{ long.ust }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.ust }}0%">{{ long.ust }}</div>
+                     {% else %}
+                     <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ long.ust }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.ust }}0%">{{ long.ust }}</div>
+                     {% endif %}
+                    </div>
+
+
+                     <center><h4><div>Амортизация: </div></h4></center>
+                     <div class="progress">
+                     {% if long.amor <= 2 %}
+                     <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ long.amor }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.amor }}0%">{{ long.amor }}</div>
+                     {% elif long.amor <= 4 %}
+                     <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ long.amor }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.amor }}0%">{{ long.amor }}</div>
+                     {% elif long.amor <= 7 %}
+                     <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar" aria-valuenow="{{ long.amor }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.amor }}0%">{{ long.amor }}</div>
+                     {% else %}
+                     <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ long.amor }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.amor }}0%">{{ long.amor }}</div>
+                     {% endif %}
+                    </div>
+
+
+                     <center><h4><div>Гибкость: </div></h4></center>
+                     <div class="progress">
+                     {% if long.gib <= 2 %}
+                     <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ long.gib }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.gib }}0%">{{ long.gib }}</div>
+                     {% elif long.gib <= 4 %}
+                     <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ long.gib }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.gib }}0%">{{ long.gib }}</div>
+                     {% elif long.gib <= 7 %}
+                     <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar" aria-valuenow="{{ long.gib }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.gib }}0%">{{ long.gib }}</div>
+                     {% else %}
+                     <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ long.gib }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ long.gib }}0%">{{ long.gib }}</div>
+                     {% endif %}
+                    </div>
+                    {% if long.oldprice %}
+                    <h3><p class="text-center"><strong><strike>{{ long.oldprice }} Р</strike></h3></p>
+                    <h3><p class="text-center"><font color="red">{{ long.price }} Р</font></strong></p></h3>
+                    {% else %}
+                    <h3><p class="text-center"><strong>{{ long.price }} Р</strong></p></h3>
+                    {% endif %}
+                 </div>
+
+          <div class="col-sm-8">
+              <center>
+              <img src="/media/{{ long.picture }}" width="300"></img>
+                    <h3><p class="text-center"><strong>Описание:</strong></p></h3>
+                    <h4><p>{{ long.charac|linebreaks }}</p></h4>
+          </div>
+
+              </center>
+                 </div>
+                <!-- <div class="modal-footer">
+                  <center>
+                      <button type="button" class="btn btn-default btn_close" data-dismiss="modal">Закрыть</button>
+                      <a href="/order/" class="btn btn-success">Заказать</a>
+                <br>
+                      <!-- <a class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target=".addtradepost{{ long.id|add:"1" }}">Next</a> -->
+                 <!-- </center>
+                </div> -->
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+
+          <div class="block_size">
+          <center>
+          <h3 class="text-center"><strong>{{ long.name }}</strong></h3>
+          <a data-toggle="modal" data-target=".addtradepost{{ long.id }}" role="button">
+              <img src="/media/{{ long.picture }}" width="250" id="img_{{ long.id }}"></img>
+              <!-- onload="imgSize('/media/{{ long.picture }}', {{ long.id }})" -->
+          </a>
+          </center>
+          <span class="to_bottom">
+          {% if long.oldprice %}
+          <h3><p class="text-center"><strong><strike>{{ long.oldprice }} Р</strike></h3></p>
+          <h3><p class="text-center"><font color="red">{{ long.price }} Р</font></strong></p></h3>
+          {% else %}
+          <h3><p class="text-center"><strong>{{ long.price }} Р</strong></p></h3>
+          {% endif %}
+        </span>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+    <nav>
+                {% if prev %}<a href="{{ prev }}" class="btn btn-lg btn-primary left-block">&laquo;</a>{% endif %}
+                {% if next %}<a href="{{ next }}" class="btn btn-lg btn-primary pull-right">&raquo;</a>{% endif %}
+    </nav>
+      <hr>
+<footer class="text-center">
+<!-- Yandex.Metrika informer -->
+<a href="https://metrika.yandex.ru/dashboard?id=35322615&amp;from=informer" target="_blank" rel="nofollow">
+    <img src="https://informer.yandex.ru/informer/35322615/3_1_FFFFFFFF_EFEFEFFF_0_pageviews" style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:35322615,lang:'ru'});return false}catch(e){}" />
+</a>
+<!-- /Yandex.Metrika informer -->
+</footer>
+    </div> <!-- /container -->
+    <script>
+    window.imgSize = function(href, id) {
+        var img = new Image();
+        img.src = href;
+        img.onload = function() {
+            return img;
+        };
+        document.getElementById('img_'+id).width = img.width / Math.max(300, img.width) * 300;
+        document.getElementById('img_'+id).height = img.height / Math.max(300, img.width) * 300;
+    }
+    </script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) { (w[c] = w[c] || []).push(function() {
+    try {
+        w.yaCounter35322615 = new Ya.Metrika({
+            id:35322615, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true
+        });
+    } catch(e) { }
+});
+var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); };
+s.type = "text/javascript";
+s.async = true;
+s.src = "https://mc.yandex.ru/metrika/watch.js";
+if (w.opera == "[object Opera]") {
+    d.addEventListener("DOMContentLoaded", f, false);
+} else {
+    f();
+}
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/35322615" style="position:absolute; left:-9999px;" alt="" /></div>
+</noscript>
+ <!-- /Yandex.Metrika counter-->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    </body>
+</html>

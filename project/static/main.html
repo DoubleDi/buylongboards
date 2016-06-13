@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Buy longboard</title>
+    {% load staticfiles %}
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "main.css" %}">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Buy longboard</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-center">
+                    <li class="active"><a href="/">Каталог</a></li>
+                    <li><a href="/order/">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+      </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron jumbo">
+      <div class="container">
+<font color="white">
+          <h3>
+        <p class="text-center">
+            Привет, друг, хочешь купить лонгборд? Ты обратился по адресу.
+        </p>
+        <p class="text-center">
+            В нашем магазине Buy longbord ты сможешь найти лонгборды любой формы, любого цвета и размера.
+        </p>
+        <p class="text-center">
+            Мы сотрудничаем со всеми известными производителями.
+        </p>
+        <p class="text-center">
+            Анализируя весь рынок лонгбордов, мы устанавливаем самые низкие цены.
+        </p>
+        <p class="text-center">
+            Неважно, новичок ты или профессионал, у нас ты найдешь все, что тебе нужно.
+        </p>
+        </h3>
+    </font>
+        <center>
+        <a href="/order/" class="btn btn-lg btn-success">Заказать прямо сейчас</a>
+        </center>
+      </div>
+    </div>
+    <div class="container">
+<h3> Hажми на понравившуюся тебе доску...</h3>
+      <!-- Example row of columns -->
+        <div class="row">
+        {% for long_pack in long_list %}
+        <div class="col-md-3">
+        {% for long in long_pack %}
+          <br>
+          <br>
+          <!--add tradepost -->
+          <div class="modal fade bs-modal-lg addtradepost{{ long.id }} col-sm-20">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title text-center">{{ long.name }}</h3>
+                </div>
+                <div class="modal-body row">
+
+          <div class="col-sm-5">
+              <center>
+              <img src="/media/{{ long.picture }}" width="300"></img>
+              </center>
+          </div>
+                <div class="col-sm-7">
+                    <br>
+                    <h3><p class="text-center"><strong>{{ long.price }} Р</strong></p></h3>
+                    <br>
+                    <br>
+                    <h3><p class="text-center"><strong>Описание:</strong></p></h3>
+                    <h4>
+                        <div class="center_text">
+                        <p>{{ long.charac|linebreaks }}</p>
+                    </div></h4>
+                 </div>
+                 <div class="col-sm-12">
+                     <br>
+                        <center><h3>
+                     <strong>
+                         Характеристики по Buylongboard:
+                     </strong>
+                     </h3></center>
+                 </div>
+                 </div>
+                <div class="modal-footer">
+                <br>
+                  <center>
+                      <button type="button" class="btn btn-default btn_close" data-dismiss="modal">Закрыть</button>
+                      <a href="/order/" class="btn btn-success">Заказать</a>
+                  </center>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+
+          <div class="block_size">
+          <center>
+          <h3 class="text-center"><strong>{{ long.name }}</strong></h3>
+          <a href="#addtradepost{{ long.id }}" data-toggle="modal" data-target=".addtradepost{{ long.id }}" role="button">
+              <img src="/media/{{ long.picture }}" width="250" id="img_{{ long.id }}"></img>
+              <!-- onload="imgSize('/media/{{ long.picture }}', {{ long.id }})" -->
+          </a>
+          <h3><p class="text-center"><strong>{{ long.price }} Р</strong></p></h3>
+          </center>
+          </div>
+        {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+      <hr>
+      <footer class="text-right">
+        <p>&copy; Company 2016</p>
+      </footer>
+    </div> <!-- /container -->
+
+    <script>
+    window.imgSize = function(href, id) {
+        var img = new Image();
+        img.src = href;
+        img.onload = function() {
+            return img;
+        };
+        document.getElementById('img_'+id).width = img.width / Math.max(300, img.width) * 300;
+        document.getElementById('img_'+id).height = img.height / Math.max(300, img.width) * 300;
+    }
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    </body>
+</html>

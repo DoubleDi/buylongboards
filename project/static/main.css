@@ -1,0 +1,41 @@
+{% load staticfiles %}
+
+body {
+    width: auto;
+}
+
+.indent {
+    text-indent: 75px;
+}
+
+.txt {
+    position: fixed;
+    text-align: center;
+}
+
+.block_size {
+    height: 350px;
+}
+
+.center_text {
+  text-align: center;
+}
+
+.jumbo {
+    width: 100%;
+    background: url(top.jpg);
+}
+
+.modal-dialog {
+    width: 75%;
+}
+
+.mynav {
+    width: 100%
+}
+
+.to_bottom {
+   position: absolute;
+   bottom: 0;
+   right: 40%;
+}
