@@ -1,0 +1,6 @@
+python-pip
+django1.7
+python-mysqldb
+pillow
+
+touch /hlds/web/u138225p28/buylongboard.ru/htdocs/project-reload
